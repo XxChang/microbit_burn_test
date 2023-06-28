@@ -1,0 +1,24 @@
+[package]
+name = "microbit_burn_test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7.3"
+embedded-alloc = "0.5.0"
+
+rtt-target = { version =  "0.4.0" }
+panic-rtt-target = { version =  "0.1.2", features = ["cortex-m"] }
+
+burn = { git = "https://github.com/burn-rs/burn", version = "0.8.0", default-features = false}
+burn-ndarray = { git = "https://github.com/burn-rs/burn", version = "0.8.0", default-features = false}
+serde = { version = "1.0.160", default-features = false }
+
+[dependencies.microbit-v2]
+version = "0.13.0"
+
+[[bin]]
+name = "microbit_burn_test"
+test = false
+bench = false
